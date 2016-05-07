@@ -29,7 +29,7 @@
             <tr>
                 <td><?= $elem["id"] ?></td>
                 <td>
-                    <a href = "#"><?= $elem["title"] ?></a>
+                    <a href = "prob_set.php?sid=<?= $elem["id"] ?>"><?= $elem["title"] ?></a>
                 </td>
             </tr>
             <?php endforeach; ?>

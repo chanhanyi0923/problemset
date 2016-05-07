@@ -50,6 +50,10 @@ class link_db {
         $stmt -> close();
         return true;
     }
+    public function fetch_prob_title($prob_id) {
+        $this -> fetch_prob($prob_id, $owner, $title, $desc, $choice, $options, $ans, $det_ans);
+        return $title;
+    }
     public function insert_prob($owner, $title, $desc, $choice, $options, $ans, $det_ans) {
         $query_str = "INSERT INTO problem (owner, title, prob_DESC, choice, options, ans, det_ans) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this -> db -> prepare($query_str);
@@ -184,13 +188,13 @@ class link_db {
         $stmt -> bind_param("i", $id);
         $suc = $suc && $stmt -> execute();
         $stmt -> close();
-        
+
         $query_str = "DELETE FROM prob_set_pid WHERE set_id = ?";
         $stmt = $this -> db -> prepare($query_str);
         $stmt -> bind_param("i", $id);
         $suc = $suc && $stmt -> execute();
         $stmt -> close();
-        
+
         return $suc;
     }
     public function insert_prob_set($title, $owner, $pid, $id) {

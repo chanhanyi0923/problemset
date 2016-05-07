@@ -27,7 +27,7 @@
         <tbody>
             <?php foreach($prob_info as $elem): ?>
             <tr>
-                <?php if(is_null($elem["status"])): ?>
+                <?php if(!isset($elem["status"])): ?>
                 <td><?= $elem["id"] ?></td>
                 <?php elseif(check_login() && $elem["status"] == 0): ?>
                 <td class = "danger"><?= $elem["id"] ?></td>

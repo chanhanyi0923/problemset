@@ -1,5 +1,6 @@
 <?php
 require_once("include/func.php");
+require_once("include/config.php");
 
 session_start();
 

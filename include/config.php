@@ -17,7 +17,7 @@ $MSG_DET_ANS = "詳解";
 $MSG_SUBMIT = "提交";
 $MSG_PROB_TITLE = "題目名稱";
 $MSG_PROB_SET_TITLE = "題組名稱";
-$MSG_OWNER = "題目擁有者";
+$MSG_OWNER = "擁有者";
 $MSG_USERID = "帳號";
 $MSG_PASSWD = "密碼";
 $MSG_RPTPASSWD = "再次輸入密碼";
@@ -43,7 +43,8 @@ $MSG_TITLE = array(
     "prob_set_list.php" => "題組列表",
     "result.php" => "結果",
     "info.php" => "訊息",
-    "register.php" => "註冊"
+    "register.php" => "註冊",
+    "prob_set.php" => "題組"
 );
 $MSG_NAV_INFO = array(
     //pagename, text, min_pri, max_pri

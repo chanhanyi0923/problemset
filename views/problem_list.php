@@ -43,7 +43,7 @@
         </table>
     </div>
     <nav class = "col-md-12">
-        <ul class = "pagination">
+        <ul class = "pagination pagination-lg">
             <?php if($cur_page > $first_page): ?>
             <li><a href = "<?= $PAGE_NAME ?>?page=<?= $cur_page - 1 ?>">«</a></li>
             <?php else: ?>

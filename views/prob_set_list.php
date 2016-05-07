@@ -37,17 +37,17 @@
         </table>
     </div>
     <nav class = "col-md-12">
-        <ul class = "pagination">
+        <ul class = "pagination pagination-lg">
             <?php if($cur_page > $first_page): ?>
             <li><a href = "<?= $PAGE_NAME ?>?page=<?= $cur_page - 1 ?>">«</a></li>
             <?php else: ?>
             <li><a>«</a></li>
             <?php endif; ?>
-            
+
             <?php if($first_page < $cur_page - $NAVBAR_PAGE_NUM): ?>
             <li><a>...</a></li>
             <?php endif; ?>
-            
+
             <?php for($i = max($first_page, $cur_page - $NAVBAR_PAGE_NUM);
                       $i <= min($last_page, $cur_page + $NAVBAR_PAGE_NUM); $i ++): ?>
             <?php if($i == $cur_page): ?>
@@ -56,11 +56,11 @@
             <li><a href = "<?= $PAGE_NAME ?>?page=<?= $i ?>"><?= $i ?></a></li>
             <?php endif; ?>
             <?php endfor; ?>
-            
+
             <?php if($last_page > $cur_page + $NAVBAR_PAGE_NUM): ?>
             <li><a>...</a></li>
             <?php endif; ?>
-            
+
             <?php if($cur_page < $last_page): ?>
             <li><a href = "<?= $PAGE_NAME ?>?page=<?= $cur_page + 1 ?>">»</a></li>
             <?php else: ?>

@@ -10,6 +10,7 @@ $PRI_EDIT = 1;
 $PRI_NOT_LOG = -1;
 $PRI_LOG = 0;
 
+$MSG_FOOTER = "FOOTER";
 $MSG_DESC = "題目敘述";
 $MSG_ANS = "答案";
 $MSG_SUBMIT_ANS = "提交的答案";

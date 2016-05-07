@@ -27,6 +27,14 @@ if($cur_page < $first_page || $cur_page > $last_page) {
 
 $prob_info = NULL;
 $ld -> fetch_prob_list(1 + ($cur_page - 1) * $ELEM_PER_PAGE, $ELEM_PER_PAGE, $prob_info);
+$aid = $ld -> fetch_ac_by_userid("id", $_SESSION["login"]);
+
+if(check_login()) {
+    for($i = count($prob_info) - 1; $i > -1; $i --) {
+        $prob_info[$i]["status"] = $ld -> fetch_prob_status($aid, $prob_info[$i]["id"]);
+    }
+}
+
 $ld -> close();
 
 require_once("views/problem_list.php");

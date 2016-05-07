@@ -27,12 +27,12 @@
         <tbody>
             <?php foreach($prob_info as $elem): ?>
             <tr>
-                <?php if(check_login() && $elem["status"] == 0): ?>
+                <?php if(is_null($elem["status"])): ?>
+                <td><?= $elem["id"] ?></td>
+                <?php elseif(check_login() && $elem["status"] == 0): ?>
                 <td class = "danger"><?= $elem["id"] ?></td>
                 <?php elseif(check_login() && $elem["status"] == 1): ?>
                 <td class = "success"><?= $elem["id"] ?></td>
-                <?php else: ?>
-                <td><?= $elem["id"] ?></td>
                 <?php endif; ?>
                 <td>
                     <a href = "problem.php?pid=<?= $elem["id"] ?>"><?= $elem["title"] ?></a>
@@ -49,11 +49,11 @@
             <?php else: ?>
             <li><a>«</a></li>
             <?php endif; ?>
-            
+
             <?php if($first_page < $cur_page - $NAVBAR_PAGE_NUM): ?>
             <li><a>...</a></li>
             <?php endif; ?>
-            
+
             <?php for($i = max($first_page, $cur_page - $NAVBAR_PAGE_NUM);
                       $i <= min($last_page, $cur_page + $NAVBAR_PAGE_NUM); $i ++): ?>
             <?php if($i == $cur_page): ?>
@@ -62,11 +62,11 @@
             <li><a href = "<?= $PAGE_NAME ?>?page=<?= $i ?>"><?= $i ?></a></li>
             <?php endif; ?>
             <?php endfor; ?>
-            
+
             <?php if($last_page > $cur_page + $NAVBAR_PAGE_NUM): ?>
             <li><a>...</a></li>
             <?php endif; ?>
-            
+
             <?php if($cur_page < $last_page): ?>
             <li><a href = "<?= $PAGE_NAME ?>?page=<?= $cur_page + 1 ?>">»</a></li>
             <?php else: ?>
